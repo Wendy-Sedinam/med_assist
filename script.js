@@ -17,6 +17,32 @@ document.querySelector('.play-btn').addEventListener('click', function () {
     alert("Playing video...");
 });
 
-document.querySelector('.new-user button').addEventListener('click', function () {
-    alert("Redirecting to services...");
+document.addEventListener("DOMContentLoaded", function () {
+    // Sign-up button functionality
+    const signUpButton = document.querySelector(".sign-up");
+    if (signUpButton) {
+        signUpButton.addEventListener("click", function () {
+            alert("Sign-up functionality coming soon!");
+        });
+    }
+
+
+    // Hover effect for session summary box
+    const summaryBox = document.querySelector(".session-summary");
+    summaryBox.addEventListener("mouseenter", function () {
+        this.style.backgroundColor = "#b3e5fc"; // Light blue effect
+    });
+
+    summaryBox.addEventListener("mouseleave", function () {
+        this.style.backgroundColor = "#e3f2fd"; // Original color
+    });
+
+    // New User Button Click Effect
+    const newUserButton = document.querySelector(".new-user button");
+    newUserButton.addEventListener("click", function () {
+        this.innerText = "Loading...";
+        setTimeout(() => {
+            this.innerText = "Services";
+        }, 2000);
+    });
 });
